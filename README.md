@@ -1,5 +1,11 @@
 # Frontend-Developer-Technical-Interview
 
+[1. Map and forEach difference](#1-map-and-foreach-difference)
+
+[2. Undefined and null difference](#2-undefined-and-null-difference)
+
+[3. Event Delegation](#3-event-delegation)
+
 ## 1. Map and forEach difference
 
 Both are array functions to loop through the same.
