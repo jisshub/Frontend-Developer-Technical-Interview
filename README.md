@@ -14,6 +14,13 @@
 
 [7. Call, Apply and Bind Methods ](#7-Call-Apply-and-Bind-Methods)
 
+[8. Implement Promise.all() method](#8-Implement-Promise.all()-method)
+
+[9. Explain lifecycle methods using class components](#9-Explain-lifecycle-methods-using-class-components)
+
+[10. Explain lifecycle methods using functional component](#10-Explain-lifecycle-methods-using-functional-component)
+
+[11. Ways to center a Div element](#1-Ways-to-center-a-Div-element)
 
 
 
@@ -269,7 +276,7 @@ const personName = person.fullName.call({
 console.log(personName);
 ```
 
-## Apply Method
+### Apply Method
 
 - The *apply* method in JavaScript is used to invoke a function and set the this value within the function's scope.
 
@@ -430,7 +437,7 @@ componentWillUnmount() {
 These 3 are the life cycle methods of React.
 
 
-## 9. Explain lifecycle methods using functional component
+## 10. Explain lifecycle methods using functional component
 
 - To use life cycle method in react functional component, we use a hook called **useEffect**.
 
@@ -511,7 +518,7 @@ function Counter({ count }) {
 - Here, component *Counter* is unmounted from our App. Then *useEffect* runs.
 
 
-## 10. Ways to center a Div element.
+## 11. Ways to center a Div element
 
 <!-- time: 40: 16 -->
 
