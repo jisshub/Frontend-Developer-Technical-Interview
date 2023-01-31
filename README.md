@@ -14,14 +14,13 @@
 
 [7. Call, Apply and Bind Methods ](#7-Call-Apply-and-Bind-Methods)
 
-[8. Implement Promise.all() method](#8-Implement-Promise.all()-method)
+[8. Implement Promise.all() method](#8-Implement-Promise-all()-method)
 
 [9. Explain lifecycle methods using class components](#9-Explain-lifecycle-methods-using-class-components)
 
 [10. Explain lifecycle methods using functional component](#10-Explain-lifecycle-methods-using-functional-component)
 
 [11. Ways to center a Div element](#1-Ways-to-center-a-Div-element)
-
 
 
 ## 1. Map and forEach difference
