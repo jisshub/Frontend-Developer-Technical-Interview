@@ -94,9 +94,207 @@ document.querySelector('#products').addEventListener('click', (event)=>{
 
 So when clicking on any item our url changes.  We gave event listener only to our parent element and not to the childs. Still it worked. This is called event delegation.
 
+## 4. Flatten the Array
 
-https://www.youtube.com/watch?v=abbdJ4Yfm54&list=PLT6wrBlkasCPjMdGCbU_vWN14QE97zlZV&index=26&t=1845s
+```js
+// Flatten the Array
 
-<!-- time: 9:00 -->
+let ArrayData = [
+    [1,2],
+    [3,4],
+    [5,6,7,8,9],
+    [10,11,12]
+]
+
+console.log(ArrayData.flat())
+```
+
+## 5. var vs let vs const
+
+
+### Case 1 - Function and Block Scoped
+
+*var* is function scoped. *let* and *const* keywords are block scoped. Let's explain what i meant.
+
+```js
+{
+    var num = 100
+}
+console.log(num)
+```
+Above code prints `100` since scope of *var* is avaiable in and out of curly braces.
+
+
+```js
+{
+    const num = 100
+}
+console.log(num)
+```
+Above code prints `Reference Error` since scope of *const* is only avaiable inside the curly braces or or within that block of code
+
+
+```js
+{
+    let num = 100
+}
+console.log(num)
+```
+Above code prints `Reference Error` since scope of *let* is only avaiable inside the curly braces or within that block of code.
+
+### Case 2: Declaration and Initialization
+
+```js
+let a = 10
+let a = 20
+```
+- *let* cannot be redeclared. Shows Error: Identifier 'a' has already been declared
+
+```js
+let b = 50
+b = 100
+```
+- *let* can be reinitialized with new value.
+
+```js
+var c = 100 
+var c = 900
+```
+- *var* can be redeclared.
+
+```js
+var c = 1000
+c = 500
+```
+- *var* can be reinitialized with new value.
+
+```js
+const v = 400
+const v = 500
+```
+- *const* variable cannot be redeclared. Shows declaration error.
+
+```js
+const g = 1000
+g = 800
+```
+- *const* variable cannot be reinitialized. 
+
+
+Another difference is,
+
+```js
+const a;
+var g;
+let y;
+```
+
+Here we cannot declare a *const* without assigning a value to it. It shows `Missing initializer in const declaration`.
+But we can declare *let* and *var* withour assigning a value to it. 
+
+
+## 6. setTimeout function with Example
+
+- The *setTimeout* function is a JavaScript method that allows you to execute a function after a specified amount of time.
+
+```js
+console.log("Start");
+setTimeout(function () {
+  console.log("Executed after 2 seconds");
+}, 2000);
+console.log("End");
+```
+
+- Here Start is executed first, then End is printed followed by console.log statement in *setTimeout()*.
+
+- In this example, *setTimeout* is used to execute the anonymous function after 2 seconds (2000 milliseconds). The *console.log* statements before and after the *setTimeout* function are executed immediately.
+
+
+## 7. Call, Apply and Bind Methods 
+
+### Bind Method
+
+- The bind method in JavaScript is used to invoke a function and set the `this` value within the function's scope.
+
+- *Bind()* method returns a new function.
+
+```js
+const person = {
+    firstName: '',
+    lastName: '',
+    fullName: function () {
+        return this.firstName+' '+this.lastName
+    }
+};
+
+const personName = person.fullName.bind({
+    firstName: 'justin',
+    lastName: 'varghese'
+});
+
+console.log(personName());
+```
+
+### Call Method
+
+- The call method in JavaScript is used to invoke a function and set the `this` value within the function's scope.
+
+- *call()* method not returns a new function, instead returns a javscript variable.
+
+```js
+const person = {
+    firstName: '',
+    lastName: '',
+    fullName: function () {
+        return this.firstName+' '+this.lastName
+    }
+};
+
+const personName = person.fullName.call({
+    firstName: 'justin',
+    lastName: 'varghese'
+});
+
+console.log(personName);
+```
+
+## Apply Method
+
+- The *apply* method in JavaScript is used to invoke a function and set the this value within the function's scope.
+
+*Syntax*: 
+
+```js
+function.apply(thisArg, [arg1, arg2, ...])
+```
+
+- *thisArg* is the value of **this** inside the function.
+- The second argument is an array of arguments [arg1, arg2, ...] passed to the function.
+
+
+```js
+const person = {
+    firstName: '',
+    lastName: '',
+    fullName: function (greeting) {
+        return greeting + ' ' + this.firstName+' '+this.lastName
+    }
+};
+
+const personName = person.fullName.apply(
+    {
+        firstName: 'justin',
+        lastName: 'varghese',
+    }, 
+    ['Hello']
+);
+
+console.log(personName);
+```
+
+- Here array with value `Hello` is passed as an argument to parameter `greeting`
+
+
+
 
  
