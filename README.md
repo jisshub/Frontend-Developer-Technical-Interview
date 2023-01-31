@@ -405,10 +405,116 @@ export default Counter;
 
 ### 2. componentWillUnmount method
 
+- This method runs when our component is removed from our app or when it is unmounted.
 
-<!-- time: 37:00 -->
+**Counter.js**
 
-https://www.youtube.com/watch?v=abbdJ4Yfm54&list=PLT6wrBlkasCPjMdGCbU_vWN14QE97zlZV&index=27&t=1845s
+```js
+componentWillUnmount() {
+    console.log("componentwillunmount runs");
+}
+```
+
+**App.js**
+
+```js
+ return (
+    <div className="App">
+      {/* <Counter count={count} /> */}
+      <button onClick={handleClick}>Increment</button>
+    </div>
+  );
+```
+
+
+These 3 are the life cycle methods of React.
+
+
+## 9. Explain lifecycle methods using functional component
+
+- To use life cycle method in react functional component, we use a hook called **useEffect**.
+
+- *useEffect* takes a callback function and a dependancy array
+
+### Case 1: Empty Dependancy Array / componentDidMount
+
+```js
+function Counter({ count }) {
+  useEffect(() => {
+    console.log("Component is mounted");
+  }, []);
+  return (
+    <>
+      <h1>{count} times</h1>
+    </>
+  );
+}
+
+export default Counter;
+```
+
+- It runs only once when our component is mounted initially because the array of dependency is empty.
+
+
+### Case 2: Passing a Dependancy Array / componentDidUpdate
+
+- Here *useEffect* runs everytime when *count* prop is updated or the state passed in to dependancy array changes.
+
+```jsx
+function Counter({ count }) {
+  useEffect(() => {
+    console.log("Component is updated");
+  }, [count]);
+  return (
+    <>
+      <h1>{count} times</h1>
+    </>
+  );
+}
+
+export default Counter;
+```
+
+### Case 3: Component is Unmounted
+
+- It runs when our component is removed from app or unmounted.
+
+**Counter.js**
+
+```js
+function Counter({ count }) {
+  useEffect(() => {
+    console.log("component is updated");
+    return () => {
+      console.log("component is unmounted");
+    };
+  }, [count]);
+  return (
+    <>
+      <h1>{count} times</h1>
+    </>
+  );
+}
+```
+
+**App.js**
+
+```js
+ return (
+    <div className="App">
+      {/* <Counter count={count} /> */}
+      <button onClick={handleClick}>Increment</button>
+    </div>
+  );
+```
+
+- Here, component *Counter* is unmounted from our App. Then *useEffect* runs.
+
+
+## 10. Ways to center a Div element.
+
+
+
 
 
 
