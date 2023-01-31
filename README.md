@@ -6,6 +6,17 @@
 
 [3. Event Delegation](#3-event-delegation)
 
+[4. Flatten the Array](#4-flatten-the-array)
+
+[5. var vs let vs const](#5-var-vs-let-vs-const)
+
+[6. setTimeout function with Example](#6-setTimeout-function-with-Example)
+
+[7. Call, Apply and Bind Methods ](#7-Call-Apply-and-Bind-Methods)
+
+
+
+
 ## 1. Map and forEach difference
 
 Both are array functions to loop through the same.
@@ -318,6 +329,91 @@ Promise.all([
     console.log(value)
 })
 ```
+
+## 9. Explain lifecycle methods using class components
+
+### 1. componentDidMount method
+
+- **componentDidMount** runs when our component is rendered for the first time.
+
+- Use cases are when we want to fetch from our API's, or provide some initial values to our state variable on first component render.
+
+```jsx
+class App extends React.Component {
+  componentDidMount() {
+    console.log("componentDidMount runs");
+  }
+  render() {
+    return <button>Hello</button>;
+  }
+}
+
+export default App;
+```
+
+### 2. componentDidUpdate method
+
+- **componentDidUpdate** runs everytime when our component states or props are updated.
+
+- In below program, whenever button is clicked **componentDidUpdate** runs because our state gets updated.
+
+**App.js**
+
+```jsx
+import Counter from "./components/Counter";
+
+class App extends React.Component {
+  state = {
+    number: 10
+  };
+  componentDidMount() {
+    console.log("componentDidMount runs");
+  }
+  componentDidUpdate() {
+    console.log("component did update runs");
+  }
+  handleClick() {
+    this.setState({ number: this.state.number + 1 });
+  }
+  render() {
+    return (
+      <>
+        <button onClick={this.handleClick.bind(this)}>Hello</button>
+
+        {/* pass prop number to Counter component  */}
+        <Counter number={this.state.number} />
+      </>
+    );
+  }
+}
+
+export default App;
+```
+
+**Counter.jsx**
+
+```jsx
+class Counter extends React.Component {
+  render() {
+    // get the prop passed using this.props
+    return <h2>{this.props.number} times</h2>;
+  }
+}
+
+export default Counter;
+```
+
+### 2. componentWillUnmount method
+
+
+<!-- time: 37:00 -->
+
+https://www.youtube.com/watch?v=abbdJ4Yfm54&list=PLT6wrBlkasCPjMdGCbU_vWN14QE97zlZV&index=27&t=1845s
+
+
+
+
+
 
 
 
