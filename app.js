@@ -10,7 +10,7 @@ Promise.all([
     computers('dell'),
     Promise.resolve('hello'),
     // Promise.reject('bad luck')
-]).then(value=>console.log(value))
+]).then(value=>console.lo   g(value))
 
 // Promise.all() takes an array of promises which resolve and reject.
 
