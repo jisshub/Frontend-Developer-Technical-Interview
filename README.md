@@ -295,6 +295,32 @@ console.log(personName);
 - Here array with value `Hello` is passed as an argument to parameter `greeting`
 
 
+## 8. Implement Promise.all() method
+
+- The *Promise.all()* method is one of the promise concurrency methods. It can be useful for aggregating the results of multiple promises. It is typically used when there are multiple related asynchronous tasks to resolve.
+
+- *Promise.all()* will reject immediately upon any of the input promises rejecting.
+
+```js
+function showText(text, time) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            resolve(text)
+        }, time);
+    })
+}
+
+Promise.all([
+    showText('hello javscript', 2000),
+    Promise.resolve('Resolved'),
+    Promise.reject('Rejected')
+]).then((value)=>{
+    console.log(value)
+})
+```
+
+
+
 
 
  

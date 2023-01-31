@@ -1,18 +1,16 @@
-const Exam = {
-    subject: '',
-    duration: '',
-    date: '',
-    combine: function (rooms) {
-        return this.subject + ' ' + this.duration + ' ' + this.date + ' ' + rooms
-    }
+function computers(name) {
+    return new Promise((resolve, reject) => {
+        setInterval(() => {
+            resolve(name)
+        }, 2000);
+    })
 }
 
-const examDetails = Exam.combine.apply({
-    subject: 'history',
-    duration: '2 hr',
-    date: 'jan 10'
-}, 
-['room30']
-);
+Promise.all([
+    computers('dell'),
+    Promise.resolve('hello'),
+    // Promise.reject('bad luck')
+]).then(value=>console.log(value))
 
-console.log(examDetails)
+// Promise.all() takes an array of promises which resolve and reject.
+
