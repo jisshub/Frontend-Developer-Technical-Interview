@@ -1,4 +1,4 @@
-# Frontend-Developer-Technical-Interview
+# Frontend-Developer-Technical-Interview (Reactjs)
 
 [1. Map and forEach difference](#1-map-and-foreach-difference)
 
