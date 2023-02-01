@@ -1,0 +1,11 @@
+.box1 {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.child-box {
+    border: 5px solid slateblue;
+    padding: 20px;
+    margin: 10px;
+    width: 100px;
+}

@@ -23,6 +23,11 @@
 [11. Ways to center a Div element](#11-Ways-to-center-a-Div-element)
 
 
+[12. What is CSS Box Model](#12-what-is-css-box-model)
+
+[13. Debounce Function in React](#13-debounce-function-in-react)
+
+
 ## 1. Map and forEach difference
 
 Both are array functions to loop through the same.
@@ -519,20 +524,113 @@ function Counter({ count }) {
 
 ## 11. Ways to center a Div element
 
-<!-- time: 40: 16 -->
+
+```html
+<div class="parent">
+    <h2 class="child">
+        Center this
+    </h2>
+</div>
+```
+
+### Case 1: Using flexbox
+
+```css
+.parent {
+  display: flex;
+  justify-content: center
+}
+```
+
+### Case 2: Set Width to 50% and Margin Property to auto.
+
+```css
+.parent { 
+    width: 50%;
+    margin: auto;
+}
+.child {
+    border: 2px solid green;
+    padding: 20px;
+    text-align: center;
+}
+```
 
 
-https://www.youtube.com/watch?v=abbdJ4Yfm54&list=PLT6wrBlkasCPjMdGCbU_vWN14QE97zlZV&index=28&t=1845s
+### Case 3: Center a div both horizaontaly and vertically.
+
+```css
+.parent { 
+    text-align: center;
+    width: 100%;
+    height: 100%;
+}
+.child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+```
+
+## 12. What is CSS Box Model
+
+```html
+<h3 class="child-box">
+    Header 3
+</h3>
+```
+
+```css
+.child-box {
+    border: 5px solid slateblue;
+    padding: 20px;
+    margin: 10px;
+    width: 100px;
+}
+```
+
+- These 4 properties(border, padding, margin and width) on HTML element are combined to form a css box model. Every single HTML element has these 4 properties.
+
+- We can view the same in below picture. For that `h3` element there exist 4 properties such as *padding, border, width and margin*. So these 4 are combined to form a *css box model*.
+
+![](./images/imag.png)
 
 
+## 13. Debounce Function in React
+
+Go to flipkart, search for a product, when we stop writing for a product, after a few milliseconds, the results are fetched. This is called *debouncing*.
+
+https://codesandbox.io/s/debounce-functionality-in-react-hgdbve
+
+```jsx
+import "./styles.css";
+
+export default function App() {
+  const myDebounce = (cb, d) => {
+    let timer;
+    return function (...args) {
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(() => {
+        cb(...args);
+      }, d);
+    };
+  };
+
+  const handleChange = myDebounce((e) => {
+    console.log(e.target.value);
+  }, 1000);
+
+  return (
+    <div className="App">
+      <input onChange={handleChange} />
+    </div>
+  );
+}
+```
+
+In above program, when user stops writing the input in the field, after 1 second, content that is typed is printed on conole.
 
 
+https://www.youtube.com/watch?v=vxggZffOqek&list=PLT6wrBlkasCPjMdGCbU_vWN14QE97zlZV&index=30
 
-
-
-
-
-
-
-
- 
