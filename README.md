@@ -34,7 +34,11 @@
 
 [17. Implement the below code](#17-implement-the-below-code)
 
-[18. Map Filter and Reduce Functions]
+[18. Map, Filter and Reduce Functions or Higher Order Functions](#18-map-filter-and-reduce-functions-or-higher-order-functions)
+
+[19. Chaining Map and Filter Functions](#19-chaining-map-and-filter-functions)
+
+[20. Polyfills of Higher Order Functions](#20-polyfills-of-higher-order-functions)
 
 
 ## 1. Map and forEach difference
@@ -804,6 +808,21 @@ const mappedArray = array1.map((value) => value * 3)
 console.log(mappedArray)
 ```
 
+### Get Full Names from Array Using Map
+
+```js
+const users = [
+    {firstName: 'akshay', lastName: 'saini', age: 24},
+    {firstName: 'jissmon', lastName: 'jose', age: 26},
+    {firstName: 'ajith', lastName: 'kumar', age: 28}
+]
+
+const fullNamesArray = users.map((user) => {
+    return `${user.firstName} ${user.lastName}` 
+});
+console.log(fullNamesArray)
+```
+
 ## Filter Function
 
 - filter out values from an array that matches a condition and form a new array with returned values.
@@ -823,7 +842,7 @@ console.log(filteredArr)
 
 - For example, if we have array of values and we want to find sum of all the values.
 
-- Find sum of an array using normal method.
+### Find sum of an array using reduce method.
 
 ```js
 function findSum(array1) {
@@ -859,6 +878,58 @@ const sumArray = array1.reduce((acc, currentValue) => {
 }, 0)
 console.log(sumArray)
 ```
+
+### Find Maximum value in an array using normal method.
+
+```js
+function largestValue(array1) {
+    let maxValue = 0
+    for (let index = 0; index < array1.length; index++) {
+        if (array1[index] > maxValue) {
+            maxValue=array1[index]
+        } 
+    }
+    return maxValue;
+}
+```
+
+### Find Maximum value in an array using reduce function.
+
+```js
+const maxArray = array1.reduce((acc, curr)=>{
+    if (curr > acc) {
+        acc = curr
+    }
+    return acc
+}, 0)
+console.log(maxArray)
+```
+
+## 19. Chaining Map and Filter Functions
+
+### First names of all people whose age < 30
+
+- We can chain higher order functions together.
+
+```js
+const usersArr = [
+    {firstName: 'akshay', lastName: 'saini', age: 24},
+    {firstName: 'jissmon', lastName: 'jose', age: 36},
+    {firstName: 'ajith', lastName: 'kumar', age: 46},
+    {firstName: 'prithvi', lastName: 'kumar', age: 28},
+    {firstName: 'bhushan', lastName: 'kumar', age: 24}
+]
+
+const output = usersArr.filter(user => user.age < 30).map((user) => {
+    return user.firstName
+})
+console.log(output)
+```
+
+## 20. Polyfills of Higher Order Functions
+
+
+
 
 https://www.youtube.com/watch?v=zdp0zrpKzIE
 
