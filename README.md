@@ -1,4 +1,4 @@
-# Frontend-Developer-Technical-Interview (Reactjs)
+# Frontend-Developer-Technical-Interview (JavaScript & Reactjs)
 
 [1. Map and forEach difference](#1-map-and-foreach-difference)
 
@@ -33,6 +33,8 @@
 [16. Give Ouput based on Event Loop](#16-give-ouput-based-on-event-loop)
 
 [17. Implement the below code](#17-implement-the-below-code)
+
+[18. Map Filter and Reduce Functions]
 
 
 ## 1. Map and forEach difference
@@ -786,7 +788,82 @@ console.log(result.total)
 - We return the `this` object after every function to access the following functions.
 
 
-https://www.youtube.com/watch?v=dGq0gi0wv64&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=2
+## 18. Map, Filter and Reduce Functions or Higher Order Functions
+
+- map, filter and reduce are higher order functions in javscript.
+
+## Map Function
+
+- To transform an array and return a new array.
+
+- Map each values in the array and return the result in new array.
+
+```js
+const array1 = [5, 1, 3, 2, 6]
+const mappedArray = array1.map((value) => value * 3)
+console.log(mappedArray)
+```
+
+## Filter Function
+
+- filter out values from an array that matches a condition and form a new array with returned values.
+
+```js
+const array1 = [5, 1, 3, 2, 6]
+const filteredArr = array1.filter((value) => value > 4)
+console.log(filteredArr)
+```
+
+- Here all the values > 4 is filtered out into new array.
+
+
+## Reduce Function
+
+- Take all values in an array and come up with a single value from them.
+
+- For example, if we have array of values and we want to find sum of all the values.
+
+- Find sum of an array using normal method.
+
+```js
+function findSum(array1) {
+    let sum=0; 
+    for (let i = 0; i < array1.length; i++) {
+        sum+=array1[i]
+    }
+    return sum;
+}
+console.log(findSum(array1))
+```
+
+- We can perform the same using `reduce` by iterating over each values and find the total. 
+
+- `reduce` takes 2 arguments.
+  1. A Function
+  2. Initial Value which is used to pass to accumulator variable. It is set to 0.
+
+- Function has 2 parameters.
+  1. Accumulator
+  2. Current Value.
+
+- `Current value` parameter represents each and every values in the array when reduce function iterates over it.
+
+- `Accumulator` parameter accumulates each values in the array and returns the final result after the iteration of array.
+
+- Find sum of an array using normal method.
+
+```js
+const sumArray = array1.reduce((acc, currentValue) => {
+    acc += currentValue
+    return acc
+}, 0)
+console.log(sumArray)
+```
+
+https://www.youtube.com/watch?v=zdp0zrpKzIE
+
+<!-- time: 18:50 -->
+
 
 
 

@@ -1,21 +1,11 @@
-// const result = calc.add(10).multiply(50).subtract(30).add(10)
-// console.log(result.total)
+const array1 = [5, 1, 3, 2, 6]
 
-const calc = {
-    total: 0,
-    add(a) {
-        this.total += a
-        return this
-    },
-    multiply(a) {
-        this.total *= a
-        return this
-    },
-    subtract(a) {
-        this.total -= a
-        return this
-    }
-}
+// Reduce Function
 
-const result = calc.add(10).multiply(5).subtract(30).add(10)
-console.log(result.total)
+const sumArray = array1.reduce((acc, currentValue) => {
+    acc += currentValue
+    return acc
+}, 0)
+console.log(sumArray)
+
+// acc acts as a sum variable. it accumulates each value with other until iteration is over.
