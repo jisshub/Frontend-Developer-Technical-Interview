@@ -746,11 +746,43 @@ To understand how this works, Go to below url
 https://www.jsv9000.app/
 
 
-## 17. Infinite Currying
+## 18. Implement the below code
+
+**Question:**
+
+```js
+const result = calc.add(10).multiply(50).subtract(30).add(10)
+console.log(result.total)
+```
 
 
-<!-- time- 12: 00 -->
+```js
+const calc = {
+    total: 0,
+    add(a) {
+        this.total += a
+        return this
+    },
+    multiply(a) {
+        this.total *= a
+        return this
+    },
+    subtract(a) {
+        this.total -= a
+        return this
+    }
+}
 
-https://www.youtube.com/watch?v=vxggZffOqek&list=PLT6wrBlkasCPjMdGCbU_vWN14QE97zlZV&index=30
+const result = calc.add(10).multiply(5).subtract(30).add(10)
+console.log(result.total)
+```
+- We create an object `calc` with functions `add, subtract` and `mulitply`.
+- We initialize a `total` variable with 0.
+- We update `total` variable w.r.t each functions.
+- We return the `this` object after every function to access the following functions.
+
+
+https://www.youtube.com/watch?v=dGq0gi0wv64&list=PLKhlp2qtUcSaCVJEt4ogEFs6I41pNnMU5&index=2
+
 
 

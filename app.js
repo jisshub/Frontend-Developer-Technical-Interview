@@ -1,16 +1,21 @@
-console.log('a')
-setTimeout(() => {
-   console.log('set') 
-}, 0);
-Promise.resolve(() => console.log("pro")).then(res => res());
-console.log('b')
+// const result = calc.add(10).multiply(50).subtract(30).add(10)
+// console.log(result.total)
 
-// a
-// b
-// pro
-// set
+const calc = {
+    total: 0,
+    add(a) {
+        this.total += a
+        return this
+    },
+    multiply(a) {
+        this.total *= a
+        return this
+    },
+    subtract(a) {
+        this.total -= a
+        return this
+    }
+}
 
-// setTimeOut is not part of javascript, it is part of web apis. it runs after other js codes in our files are executed.
-
-// Even though timeout is 0s, It stills runs after all js codes are executed.
-
+const result = calc.add(10).multiply(5).subtract(30).add(10)
+console.log(result.total)
