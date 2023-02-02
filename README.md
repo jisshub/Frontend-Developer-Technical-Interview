@@ -722,6 +722,35 @@ fun.display.call(data)
 - console is empty in case of arrow functions.
 
 
+## 16. Give Ouput based on Event Loop 
+
+```js
+console.log('a')
+setTimeout(() => {
+   console.log('set') 
+}, 0);
+Promise.resolve(() => console.log("pro")).then(res => res());
+console.log('b')
+```
+
+**Output:**
+
+```console
+a
+b
+pro
+set
+```
+
+To understand how this works, Go to below url
+https://www.jsv9000.app/
+
+
+## 17. Infinite Currying
+
+
+<!-- time- 12: 00 -->
+
 https://www.youtube.com/watch?v=vxggZffOqek&list=PLT6wrBlkasCPjMdGCbU_vWN14QE97zlZV&index=30
 
 
