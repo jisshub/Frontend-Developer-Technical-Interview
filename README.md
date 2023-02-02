@@ -30,6 +30,10 @@
 
 [15. Implicit and Explicit Binding](#15-implicit-and-explicit-binding)
 
+[16. Give Ouput based on Event Loop](#16-give-ouput-based-on-event-loop)
+
+[17. Implement the below code](#17-implement-the-below-code)
+
 
 ## 1. Map and forEach difference
 
@@ -746,7 +750,7 @@ To understand how this works, Go to below url
 https://www.jsv9000.app/
 
 
-## 18. Implement the below code
+## 17. Implement the below code
 
 **Question:**
 
