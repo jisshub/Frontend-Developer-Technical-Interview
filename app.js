@@ -1,16 +1,21 @@
-function computers(name) {
-    return new Promise((resolve, reject) => {
-        setInterval(() => {
-            resolve(name)
-        }, 2000);
-    })
+// Implicit and Explicit Binding
+
+
+// case 1: Using anonymous function
+const fun = {
+    name: 'vijay',
+    display: ()=> {
+        console.log(this.name)
+    }
 }
 
-Promise.all([
-    computers('dell'),
-    Promise.resolve('hello'),
-    // Promise.reject('bad luck')
-]).then(value=>console.lo   g(value))
+const data = {
+    name: 'ajith'
+}
 
-// Promise.all() takes an array of promises which resolve and reject.
+// bind new object into display function.
+// ie we replace current object in display function
+// with data object. So the name is updated.
+fun.display.call(data)
+
 

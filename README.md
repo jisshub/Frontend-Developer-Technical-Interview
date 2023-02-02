@@ -22,10 +22,13 @@
 
 [11. Ways to center a Div element](#11-Ways-to-center-a-Div-element)
 
-
 [12. What is CSS Box Model](#12-what-is-css-box-model)
 
 [13. Debounce Function in React](#13-debounce-function-in-react)
+
+[14. Hoisting and Temporal Dead Zone](#14-hoisting-and-temporal-dead-zone)
+
+[15. Implicit and Explicit Binding](#15-implicit-and-explicit-binding)
 
 
 ## 1. Map and forEach difference
@@ -632,5 +635,93 @@ export default function App() {
 In above program, when user stops writing the input in the field, after 1 second, content that is typed is printed on conole.
 
 
+## 14. Hoisting and Temporal Dead Zone
+
+- We hoist a variable even before it is initialized.
+
+```js
+function hoisting() {
+    console.log(a)
+    var a = 10
+}
+
+hoisting()
+```
+
+-  Here, *console.log(a)* returns undefined since a is not defined before the *console.log* statement. 
+
+
+Check below two images for more:
+
+- In first case, a is undefined. 
+- In second case, a is defined with 10.
+
+![](./images/image1.png)
+
+![](./images//image2.png)
+
+
+### Example 2:
+
+```js
+function hoisting() {
+    console.log(a, b, c)
+    var a = 10
+    const b = 20
+    let c = 30
+}
+
+hoisting()
+```
+
+- Here we add const and let keyword. It throws `reference error`. 
+
+- But the *const* and *let* variables are hoisted in a **temporal dead zone**.
+
+- *Temporal dead zone* is the time between the declaration and initialization of the *let* and *const* variables.
+
+
+## 15. Implicit and Explicit Binding
+
+### Case 1: Using anonymous function
+
+```js
+const fun = {
+    name: 'vijay',
+    display: function () {
+        console.log(this.name)
+    }
+}
+
+const data = {
+    name: 'ajith'
+}
+
+fun.display.call(data)
+```
+
+- Bind new object into display function. we replace current object in display function with data object. So the name is updated.
+
+### Case 1: Using Arrow Functions
+
+```js
+const fun = {
+    name: 'vijay',
+    display: ()=> {
+        console.log(this.name)
+    }
+}
+
+const data = {
+    name: 'ajith'
+}
+
+fun.display.call(data)
+```
+
+- console is empty in case of arrow functions.
+
+
 https://www.youtube.com/watch?v=vxggZffOqek&list=PLT6wrBlkasCPjMdGCbU_vWN14QE97zlZV&index=30
+
 
