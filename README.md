@@ -969,25 +969,16 @@ export default MyPureComponent;
 import React from 'react';
 import MyPureComponent from './MyPureComponent';
 
-class App extends React.Component {
-  state = {
-    title: 'My Title',
-    description: 'My Description',
-  };
+export default function App() {
+  const [title, setTitle] = useState("My New Title");
+  const [description, setDescription] = useState("My New Description");
 
-  render() {
-    return (
-      <div>
-        <MyPureComponent
-          title={this.state.title}
-          description={this.state.description}
-        />
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <MyPureComponent title={title} description={description} />
+    </div>
+  );
 }
-
-export default App;
 ```
 
 
