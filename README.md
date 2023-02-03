@@ -40,6 +40,10 @@
 
 [20. Polyfills of Higher Order Functions](#20-polyfills-of-higher-order-functions)
 
+[21. React Pure Components](#21-react-pure-components)
+
+[22. UseMemo Hook](#22-usememo-hook)
+
 
 ## 1. Map and forEach difference
 
