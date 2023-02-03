@@ -928,12 +928,98 @@ console.log(output)
 
 ## 20. Polyfills of Higher Order Functions
 
-
-
-
 https://www.youtube.com/watch?v=zdp0zrpKzIE
 
 <!-- time: 18:50 -->
+
+
+## 21. React Pure Components
+
+- A pure component in React is a type of component that implements a shouldComponentUpdate lifecycle method. The method is used to determine if the component should re-render based on the changes in its props. If there are no changes, the component will not re-render, making it faster and more efficient.
+
+Here's an example of a PureComponent in React:
+
+**MyPureCOmponnet.js**
+```jsx
+import React, { PureComponent } from 'react';
+
+class MyPureComponent extends PureComponent {
+  render() {
+    return (
+      <div>
+        <h1>{this.props.title}</h1>
+        <p>{this.props.description}</p>
+      </div>
+    );
+  }
+}
+
+export default MyPureComponent;
+```
+
+- And here's an example of how you might use the above PureComponent in another component:
+
+**App.js**
+
+```jsx
+import React from 'react';
+import MyPureComponent from './MyPureComponent';
+
+class App extends React.Component {
+  state = {
+    title: 'My Title',
+    description: 'My Description',
+  };
+
+  render() {
+    return (
+      <div>
+        <MyPureComponent
+          title={this.state.title}
+          description={this.state.description}
+        />
+      </div>
+    );
+  }
+}
+
+export default App;
+```
+
+
+## 22. UseMemo hook
+
+- React's useMemo hook is used to optimize the performance of your components by memorizing the values of expensive calculations. It takes two arguments: a function that returns the value to be memorized and a list of dependencies. The hook will only re-compute the value if one of the dependencies has changed.
+
+
+**Calculation.js**
+
+```js
+import { useMemo } from "react";
+
+function Calculation({ data }) {
+  const memoizedValue = useMemo(() => {
+    data.reduce((acc, curr) => {
+      acc += curr;
+      return acc;
+    }, 0);
+  }, [data]);
+  return <div>{memoizedValue}</div>;
+}
+
+export default Calculation;
+```
+
+**App.js**
+
+```js
+export default function App() {
+  const data = [10, 28, 30, 40, 50, 60];
+  return <Calculation data={data} />;
+}
+```
+
+- Here `useMemo` hooks runs when `data` prop changes.
 
 
 
