@@ -44,6 +44,8 @@
 
 [22. UseMemo Hook](#22-usememo-hook)
 
+[23. Redux](#23-redux)
+
 
 ## 1. Map and forEach difference
 
@@ -1017,7 +1019,7 @@ export default function App() {
 - Here `useMemo` hooks runs when `data` prop changes.
 
 
-## Redux
+## 23. Redux
 
 Redux is a popular state management library for JavaScript applications, often used with React. It provides a centralized store for all the data needed by your application and a way to manage the changes to that data.
 
@@ -1071,24 +1073,25 @@ my-app/
 
 Here's what each folder contains:
 
-node_modules/: This folder contains all the libraries and dependencies required for the project.
+**node_modules/:** This folder contains all the libraries and dependencies required for the project.
 
-public/: This folder contains any static assets or files that don't change, such as the index.html file.
+**public/:** This folder contains any static assets or files that don't change, such as the index.html file.
 
-src/: This folder contains all the source code for the application.
+**src/:** This folder contains all the source code for the application.
 
-src/actions/: This folder contains all the action creators, which are functions that return action objects.
+**src/actions/:** This folder contains all the action creators, which are functions that return action objects.
 
-src/components/: This folder contains the React components that make up the UI of the application.
+**src/components/:** This folder contains the React components that make up the UI of the application.
 
-src/containers/: This folder contains the containers, which are components that are connected to the Redux store.
+**src/containers/:** This folder contains the containers, which are components that are connected to the Redux store.
 
-src/reducers/: This folder contains the reducers, which are functions that update the state in the Redux store based on the actions that are dispatched.
+**src/reducers/:** This folder contains the reducers, which are functions that update the state in the Redux store based on the actions that are dispatched.
 
-src/store/: This folder contains the configuration for the Redux store, such as the reducer and any middleware you want to use.
+**src/store/:** This folder contains the configuration for the Redux store, such as the reducer and any middleware you want to use.
 
-src/index.js: This file is the entry point for the application and sets up the store, the React components, and the routing (if applicable).
-
-
+**src/index.js:** This file is the entry point for the application and sets up the store, the React components, and the routing (if applicable).
 
 
+
+
+https://chat.openai.com/chat/48f5dd47-d81b-40a3-8023-f65de5482bf1
