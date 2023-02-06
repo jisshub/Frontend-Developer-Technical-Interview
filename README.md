@@ -1017,5 +1017,78 @@ export default function App() {
 - Here `useMemo` hooks runs when `data` prop changes.
 
 
+## Redux
+
+Redux is a popular state management library for JavaScript applications, often used with React. It provides a centralized store for all the data needed by your application and a way to manage the changes to that data.
+
+In a **React + Redux** setup, all your application's state is stored in a single, global `store` object managed by Redux. React components subscribe to the `store` to receive updates when the state changes. When a user interacts with your app, `actions` are dispatched which describe the changes to the `state`. Redux then updates the state in the store, and React re-renders the components that depend on the state.
+
+This architecture makes it easy to write and maintain complex, data-driven applications because all the state is managed in a single place.
+
+Here's a high-level overview of the **steps involved in a typical Redux flow in a React app**:
+
+**Dispatch an action**: A user interacts with the application and an action is dispatched with the updated data.
+
+**Update the store**: The action is received by the Redux store, which updates its state based on the action type and payload.
+
+**React components re-render**: The React components that are connected to the Redux store receive the updated state and re-render themselves with the new data.
+
+In summary, Redux provides a centralized store for state management and a way to manage the changes to that state using actions and reducers, making it easier to build complex, data-driven applications in React.
+
+### A simple example to demonstrate how Redux can be used in a React application
+
+Here's a simple example to demonstrate how Redux can be used in a React application:
+
+Let's say you have a React component that displays a counter, and you want to manage the state of the counter using Redux.
+
+
+
+
+
+### Redux + React folder structure
+
+
+```java
+my-app/
+├── node_modules/
+├── public/
+│   └── index.html
+├── src/
+│   ├── actions/
+│   │   └── index.js
+│   ├── components/
+│   │   └── Counter.js
+│   ├── containers/
+│   │   └── CounterContainer.js
+│   ├── reducers/
+│   │   └── index.js
+│   ├── store/
+│   │   └── index.js
+│   └── index.js
+├── package.json
+└── package-lock.json
+```
+
+Here's what each folder contains:
+
+node_modules/: This folder contains all the libraries and dependencies required for the project.
+
+public/: This folder contains any static assets or files that don't change, such as the index.html file.
+
+src/: This folder contains all the source code for the application.
+
+src/actions/: This folder contains all the action creators, which are functions that return action objects.
+
+src/components/: This folder contains the React components that make up the UI of the application.
+
+src/containers/: This folder contains the containers, which are components that are connected to the Redux store.
+
+src/reducers/: This folder contains the reducers, which are functions that update the state in the Redux store based on the actions that are dispatched.
+
+src/store/: This folder contains the configuration for the Redux store, such as the reducer and any middleware you want to use.
+
+src/index.js: This file is the entry point for the application and sets up the store, the React components, and the routing (if applicable).
+
+
 
 
