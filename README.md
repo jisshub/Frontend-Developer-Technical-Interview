@@ -46,6 +46,13 @@
 
 [23. Redux](#23-redux)
 
+[24. HIGHER ORDER COMPONENTS (HOC)](#24-higher-order-components-hoc)
+
+[25. Stateless Components](#25-stateless-components)
+
+[26. Local Storage and Session Storage](#26-local-storage-and-session-storage)
+
+[27. Async/Await](#27-asyncawait)
 
 ## 1. Map and forEach difference
 
@@ -1175,3 +1182,39 @@ localStorage.getItem('key')
 localStorage.setItem('key', 'values')
 localStorage.getItem('key')
 ```
+
+## 27. Async/Await
+
+**async/await** is a modern way to handle asynchronous code in JavaScript, using Promises.
+
+Here's an example to understand how it works:
+
+```js
+async function fetchData() {
+  // fetch returns a Promise, we wait to resolve promise by using await keyword before fetch. then we get response object
+  const response = await fetch('https://api.example.com/data');
+  // We get a promise when we call json() on response object, we wait to by again using await keyword before response.json(), now we get json data.
+  const data = await response.json();
+  return data;
+}
+
+// fetchData returns a promise, to resolve it we directly use then to get data. if error exist catch is called.
+fetchData()
+  .then(data => console.log(data))
+  .catch(error => console.error(error));
+```
+
+Explanation:
+
+1. fetch returns a Promise, we wait to resolve promise by using await keyword before fetch. then we get response object.
+
+2.  We get a promise when we call json() on response object, we wait to by again using await keyword before response.json(), now we get json data.
+
+3. fetchData returns a promise, to resolve it we directly use then to get data. if error exist catch is called.
+
+
+
+
+
+
+
