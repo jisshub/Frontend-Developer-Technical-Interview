@@ -1044,9 +1044,6 @@ Here's a simple example to demonstrate how Redux can be used in a React applicat
 Let's say you have a React component that displays a counter, and you want to manage the state of the counter using Redux.
 
 
-
-
-
 ### Redux + React folder structure
 
 
@@ -1091,7 +1088,90 @@ Here's what each folder contains:
 
 **src/index.js:** This file is the entry point for the application and sets up the store, the React components, and the routing (if applicable).
 
-
-
-
 https://chat.openai.com/chat/48f5dd47-d81b-40a3-8023-f65de5482bf1
+
+
+## 24. HIGHER ORDER COMPONENTS (HOC) 
+
+- Higher Order Components (HOCs) in React are advanced techniques in React for reusing component logic. 
+- HOCs are JavaScript functions that take a component and return a new component with additional props. 
+- HOCs do not modify or mutate the original component, they wrap it and provide additional functionality. 
+
+Example usage of HOC:
+
+```js
+const withLoading = (Component) => {
+  return function WithLoading(props) {
+    return props.isLoading ? <Loading /> : <Component {...props} />;
+  }
+}
+
+const UserListWithLoading = withLoading(UserList);
+```
+
+- Here, withLoading is an HOC that takes a component Component and returns a new component that adds a loading indicator when the isLoading prop is true.
+
+
+## 25. Stateless Components
+
+- Stateless components, also known as functional components, in React are components that do not have an internal state or lifecycle methods. They receive props as input and render the UI based on those props.
+
+- Here is an example of a stateless component in React:
+
+```js
+import React from 'react';
+
+const Greeting = (props) => {
+  return (
+    <div>
+      Hello, {props.name}!
+    </div>
+  );
+}
+
+export default Greeting;
+```
+
+- In this example, Greeting is a stateless component that takes a name prop and renders a greeting. The component can be used in another component like this:
+
+```js
+import React from 'react';
+import Greeting from './Greeting';
+
+const App = () => {
+  return (
+    <div>
+      <Greeting name="John" />
+    </div>
+  );
+}
+
+export default App;
+```
+
+
+## 26. Local Storage and Session Storage
+
+`Local Storage` and `Session Storage` are two web storage options for storing data on the client-side (in the browser) for web applications.
+
+**Local Storage:** It is a type of web storage that allows you to store data on the client-side and persist it even after the browser is closed. The data stored in local storage has no expiration date and remains until it's deleted by the application or the user.
+
+**Session Storage:** It is similar to local storage but the data stored in session storage is deleted as soon as the user closes the browser or when the session ends.
+
+Both options provide a simple key-value store, with a maximum size limit of 5MB, and can be used to store strings, arrays, and objects.
+
+### Syntax For Local Storage:
+
+```console
+localStorage.setItem('key', 'values')
+localStorage.getItem('key')
+```
+![](./images//image3.png)
+
+
+### Syntax For Session Storage:
+
+```console
+localStorage.setItem('key', 'values')
+localStorage.getItem('key')
+```
