@@ -1196,7 +1196,7 @@ async function fetchData() {
   // await keyword before fetch. then we get response object
   const response = await fetch('https://api.example.com/data');
   // We get a promise when we call json() on response object, 
-  // we wait to by again using await keyword before response.json(), now we get json data.
+  // we wait to resolve it by again using await keyword before response.json(), now we get json data.
   const data = await response.json();
   return data;
 }
