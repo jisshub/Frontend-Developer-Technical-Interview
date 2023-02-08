@@ -54,6 +54,7 @@
 
 [27. Async/Await](#27-asyncawait)
 
+
 ## 1. Map and forEach difference
 
 Both are array functions to loop through the same.
@@ -1191,14 +1192,17 @@ Here's an example to understand how it works:
 
 ```js
 async function fetchData() {
-  // fetch returns a Promise, we wait to resolve promise by using await keyword before fetch. then we get response object
+  // fetch returns a Promise, we wait to resolve promise by using 
+  // await keyword before fetch. then we get response object
   const response = await fetch('https://api.example.com/data');
-  // We get a promise when we call json() on response object, we wait to by again using await keyword before response.json(), now we get json data.
+  // We get a promise when we call json() on response object, 
+  // we wait to by again using await keyword before response.json(), now we get json data.
   const data = await response.json();
   return data;
 }
 
-// fetchData returns a promise, to resolve it we directly use then to get data. if error exist catch is called.
+// fetchData returns a promise, to resolve it we directly use then to get data. 
+// if error exist catch is called.
 fetchData()
   .then(data => console.log(data))
   .catch(error => console.error(error));
