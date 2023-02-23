@@ -1368,6 +1368,7 @@ const ChildB = () =>{
 }
 
 const ChildC = () =>{
+    // destructure the props from context object
     const {fName, lName} = useContext(context)
     return (    
         <>
