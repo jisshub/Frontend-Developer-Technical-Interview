@@ -1328,7 +1328,7 @@ export default Parent
 
 ### Prevent prop drilling by using Context
 
-Using context, we prevent prop to be passes through intermediary components. We access the props in `ChildC` component using context. Thus not causing prop drilling.
+Using context, we prevent the props to be passed through intermediary components to finaly reach the Component `ChildC`. We access the props in `ChildC` component directly using context. Thus not causing prop drilling.
 
 ```js
 import React, { useState, useContext } from "react"
