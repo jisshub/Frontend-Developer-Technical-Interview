@@ -54,6 +54,10 @@
 
 [27. Async/Await](#27-asyncawait)
 
+[28. useCallback hook with example](#28-usecallback-hook-with-example)
+
+[29. Prop Drilling with Solution](#29-prop-drilling-with-solution)
+
 
 ## 1. Map and forEach difference
 
@@ -1217,8 +1221,165 @@ Explanation:
 3. fetchData returns a promise, to resolve it we directly use then to get data. if error exist catch is called.
 
 
+## 28. useCallback hook with example
+
+The useCallback hook is a React hook that helps you optimize the performance of your components by allowing you to pass a function as a prop to a child component without re-creating the function on every render.
 
 
+Here's a simple example:
+
+```js
+import React, { useState, useCallback } from 'react';
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  const increment = useCallback(() => {
+    setCount(c => c + 1);
+  }, [setCount]);
+
+  return (
+    <div>
+      <Display count={count} />
+      <Button increment={increment} />
+    </div>
+  );
+}
+
+function Display({ count }) {
+  return <div>{count}</div>;
+}
+
+function Button({ increment }) {
+  return <button onClick={increment}>Increment</button>;
+}
+```
+
+In this example, we have a Counter component that manages the count state and a increment function that increments the count. The increment function is passed as a prop to the Button component.
+
+Without useCallback, the increment function would be re-created on every render, causing the Button component to re-render even if its props haven't changed. This can lead to unnecessary render cycles and decreased performance.
+
+With useCallback, the increment function is only re-created if its dependencies (in this case, setCount) change. This helps optimize the performance of your components by ensuring that child components only re-render when they need to.
+
+## 29. Prop Drilling with Solution
+
+https://github.com/jisshub/React-Prop-Drilling-Solution/tree/main/demo-app
 
 
+"Props drilling" is a term used in React to describe the process of passing data from a parent component down to a child component through a series of intermediate components. This can be cumbersome and lead to tightly coupled components if not done carefully. Here are a few solutions to avoid excessive props drilling:
+
+**Use Context**: Context provides a way to pass data through the component tree without having to pass props down manually at every level. You can create a context object and use the Provider component to wrap the top-level component that needs access to the data, and then use the Consumer component to access the data from any child component that needs it.
+
+**Use a state management library**: State management libraries like Redux or MobX can help you manage global state in your application. By storing data in a centralized location, you can avoid passing it down through multiple levels of components.
+
+**Use higher-order components:** Higher-order components (HOCs) allow you to wrap a component with additional functionality. You can create an HOC that provides the necessary data to the wrapped component, without having to pass it down through every level of the component tree.
+
+
+### Prop Drilling Example 
+
+Below example causes prop drilling. Here we pass prop from `Parent` Component to `ChildC` Component through components `ChildA` and `ChildB`. Since `ChildA` and `ChildB` dont actually need the props, it causes prop drilling. `ChildC` only needs the props, So it is not required to pass the prop to other component.
+
+```js
+import { useState } from "react"
+
+const Parent = () =>{ 
+    const [fName, setfName] = useState('jissmon')
+    const [lName, setlName] = useState('jose')
+
+    return (
+        <>
+            <h1>This is a parent component</h1>
+            <ChildA fName={fName} lName={lName} />
+        </>
+    )
+}
+
+const ChildA = ({fName, lName}) => {
+    return (
+        <>
+            <h2>This is a Child component A</h2>
+            <ChildB fName={fName} lName={lName} />
+        </>
+    )
+}
+
+const ChildB = ({fName, lName}) => {
+    return (
+        <>
+            <h3>This is Child component B</h3>
+            <ChildC fName={fName} lName={lName} />
+        </>
+    )
+}
+
+const ChildC = ({fName, lName}) => {
+    return (
+        <>
+            <h4>Data from parent component is below shown</h4>
+            <div>
+                <h5>Full Name: {fName} {lName}</h5>
+            </div>
+        </>
+    )
+}
+
+export default Parent
+```
+
+### Prevent prop drilling by using Context
+
+Using context, we prevent prop to be passes through intermediary components. We access the props in `ChildC` component using context. Thus not causing prop drilling.
+
+```js
+import React, { useState, useContext } from "react"
+
+let context = React.createContext(null)
+const ParentContext = () => {
+    
+    const [fName, setfName] = useState('jissmon')
+    const [lName, setlName] = useState('jose')
+
+    return (
+        <context.Provider value={{fName, lName}}>
+            <>
+                <h1>This is a parent component</h1>
+            </>
+            <ChildA />
+        </context.Provider>
+    )
+}
+
+const ChildA = () =>{
+    return (    
+        <>
+            <h1>This is a ChildA component</h1>
+            <ChildB />
+        </>
+    )
+}
+
+const ChildB = () =>{
+    return (    
+        <>
+            <h1>This is a ChildB component</h1>
+            <ChildC />
+        </>
+    )
+}
+
+const ChildC = () =>{
+    const {fName, lName} = useContext(context)
+    return (    
+        <>
+            <h1>This is a ChildC component</h1>
+            <h2>
+                Data from parent component is below
+            </h2>
+            <h3>FullName: {fName} {lName}</h3>
+        </>
+    )
+}
+
+export default ParentContext;
+```
 
