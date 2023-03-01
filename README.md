@@ -1384,3 +1384,27 @@ const ChildC = () =>{
 export default ParentContext;
 ```
 
+## 30. Why async dont works on `useEffect` but works on `componentDidMount()` ?
+
+- In React, useEffect is a Hook that allows you to perform side effects in function components. It's designed to work with synchronous functions, and it doesn't support an async function as its callback.
+
+- The reason for this is that useEffect relies on the return value of the function you pass to it in order to perform cleanup actions. If you use an async function, it returns a Promise object, which is not what useEffect is expecting. This can lead to unexpected behavior and bugs.
+
+- On the other hand, componentDidMount() is a lifecycle method in class components that's called once when the component is mounted to the DOM. This method is synchronous, and you can use an async function inside it because it doesn't rely on a return value for cleanup.
+
+- If you want to perform asynchronous actions inside a useEffect hook, you can use a regular function and wrap your async calls in it. For example:
+
+```js
+useEffect(() => {
+  const fetchData = async () => {
+    const response = await fetch('https://example.com/data');
+    const data = await response.json();
+    // do something with the data
+  };
+
+  fetchData();
+}, []);
+```
+
+- In this example, we define a regular function fetchData that wraps the async call to fetch data. We then call fetchData inside the useEffect hook. This allows us to use async calls inside fetchData without causing issues with the useEffect hook.
+
