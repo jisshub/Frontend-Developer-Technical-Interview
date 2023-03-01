@@ -58,7 +58,7 @@
 
 [29. Prop Drilling with Solution](#29-prop-drilling-with-solution)
 
-[30. Why async dont works on useEffect but works on componentDidMount](#30-Why-async-dont-works-on-useEffect-but-works-on-componentDidMount)
+[30. Why async dont works on useEffect hook but works on componentDidMount ?](#30-Why-async-dont-works-on-useEffect-hook-but-works-on-componentDidMount-?)
 
 
 ## 1. Map and forEach difference
@@ -1386,7 +1386,7 @@ const ChildC = () =>{
 export default ParentContext;
 ```
 
-## 30. Why async dont works on `useEffect` but works on `componentDidMount` ?
+## 30. Why async dont works on useEffect hook but works on componentDidMount ?
 
 - In React, useEffect is a Hook that allows you to perform side effects in function components. It's designed to work with synchronous functions, and it doesn't support an async function as its callback.
 
