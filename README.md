@@ -58,7 +58,7 @@
 
 [29. Prop Drilling with Solution](#29-prop-drilling-with-solution)
 
-[30. Why async dont works on useEffect hook but works on componentDidMount ?](#30-Why-async-dont-works-on-useEffect-hook-but-works-on-componentDidMount-?)
+[30. Why async dont works on useEffect hook but works on componentDidMount ?](#30-why-async-dont-works-on-useeffect-hook-but-works-on-componentdidmount)
 
 
 ## 1. Map and forEach difference
