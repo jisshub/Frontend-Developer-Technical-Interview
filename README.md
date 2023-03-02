@@ -563,7 +563,7 @@ useEffect(() => {
 })
 ```
 
-Here, useEffect hook is called after each & every render.
+Here, useEffect hook is called only after each & every render.
 
 
 ## 11. Ways to center a Div element
