@@ -581,6 +581,17 @@ function Counter({ count }) {
 - Here, component *Counter* is unmounted from our App. Then *useEffect* runs.
 
 
+#### Case 4: No dependancy array for useEffect hook
+
+```js
+useEffect(() => {
+    console.log('call useeffect hook!')
+})
+```
+
+Here, useEffect hook is called only after each & every render.
+
+
 ## 11. Ways to center a Div element
 
 
