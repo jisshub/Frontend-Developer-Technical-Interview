@@ -60,6 +60,32 @@
 
 [30. Why async dont works on useEffect hook but works on componentDidMount](#30-why-async-dont-works-on-useeffect-hook-but-works-on-componentdidmount)
 
+[31. CSS Positioning](#31-css-positioning)
+
+[32. Z Index Property](#32-z-index-property)
+
+[33. Event Loop in JavaScript](#33-event-loop-in-javascript)
+
+[34. Memory Hoisting](#34-memory-hoisting)
+
+[35. What are Promises ?](#35-what-are-promises)
+
+[36. JavaScript Closures](#36-javascript-closures)
+
+[37. Virtual DOM](#37-virtual-dom)
+
+[38. Functional vs Class Components](#38-functional-vs-class-components)
+
+[39. Data Flow between Parent and Child Component](#39-data-flow-between-parent-and-child-component)
+
+[40. Pass Data from Child to Parent](#40-pass-data-from-child-to-parent)
+
+[41. useMemo vs React.Memo](#41-usememo-vs-reactmemo)
+
+[42. Unmounting in Function Component](#42-unmounting-in-function-component)
+
+[43. Controlled and Uncontrolled Components](#43-controlled-and-uncontrolled-components)
+
 
 ## 1. Map and forEach difference
 
@@ -1409,4 +1435,43 @@ useEffect(() => {
 ```
 
 - In this example, we define a regular function fetchData that wraps the async call to fetch data. We then call fetchData inside the useEffect hook. This allows us to use async calls inside fetchData without causing issues with the useEffect hook.
+
+## 31. CSS Positioning
+
+
+## 32. Z Index Property 
+
+
+## 33. Event Loop in JavaScript
+
+
+## 34. Memory Hoisting
+
+
+## 35. What are Promises ?
+
+
+## 36. JavaScript Closures
+
+
+## 37. Virtual DOM
+
+
+## 38. Functional vs Class Components
+
+
+## 39. Data Flow between Parent and Child Component
+
+
+## 40. Pass Data from Child to Parent
+
+
+## 41. useMemo vs React.Memo
+
+
+## 42. Unmounting in Function Component
+
+
+## 43. Controlled and Uncontrolled Components
+
 
