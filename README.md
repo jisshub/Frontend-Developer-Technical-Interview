@@ -86,6 +86,14 @@
 
 [43. Controlled and Uncontrolled Components](#43-controlled-and-uncontrolled-components)
 
+[44. PropsTypes in React](#44-propstypes-in-react)
+
+[45. Array Slice vs Array Splice methods](#45-array-slice-vs-array-splice-methods)
+
+[46. What are selectors in CSS ?](#46-what-are-selectors-in-css)
+
+[47. Sass vs CSS](#47-sass-vs-css)
+
 
 ## 1. Map and forEach difference
 
@@ -1449,6 +1457,19 @@ useEffect(() => {
 
 ## 31. CSS Positioning
 
+Both `position: absolute` and `position: relative` are CSS positioning properties used to place elements on a web page.
+
+### 1. position: absolute
+
+- `position: absolute` is used to position an element relative to its closest positioned ancestor
+
+### 2. position: relative
+
+- `position: relative`is used to position an element relative to its normal position in the document flow.
+
+
+In summary, `position: absolute` is used to take an element out of the normal document flow and position it precisely, while `position: relative` is used to adjust the position of an element relative to its normal position in the document flow.
+
 
 ## 32. Z Index Property 
 
@@ -1484,5 +1505,85 @@ useEffect(() => {
 
 
 ## 43. Controlled and Uncontrolled Components
+
+
+## 44. PropsTypes in React
+
+- **PropTypes** is a feature in React that allows you to check the types of props passed to a component. It's a way of validating that the data passed into a component is the correct data type.
+
+- **PropTypes** is a built-in feature in React that allows you to define the expected type of each prop that a component accepts. This can help you catch bugs early and make it easier to maintain your code as your application grows.
+
+- To use **PropTypes** in your React components, you need to import it from the `prop-types` package and define the expected types of your props in the component's propTypes object. For example, if you have a component that expects a string prop called `name`, you would define the propTypes like this:
+
+  ```js
+  import PropTypes from 'prop-types';
+
+  function MyComponent(props) {
+    return <div>{props.name}</div>;
+  }
+
+  MyComponent.propTypes = {
+    name: PropTypes.string
+  };
+  ```
+
+- In this example, we're using PropTypes.string to indicate that the "name" prop should be a string. If the "name" prop is passed in as anything other than a string, React will log a warning in the console.
+
+
+## 45. Array Slice vs Array Splice methods
+
+https://stackblitz.com/edit/js-x3ptv3?file=index.js
+
+- `Array.slice()` returns a shallow copy of a portion of an array into a new array, without modifying the original array. 
+- It takes two optional parameters: `start` and `end`. 
+- The `start` parameter is the index at which to begin the slice (inclusive), and the `end` parameter is the index at which to end the slice (exclusive). 
+- If end is not provided, the slice will continue to the end of the array. The original array remains unchanged.
+
+```js
+const fruits = ['apple', 'banana', 'orange', 'grapefruit', 'lime', 'lemon'];
+const citrus = fruits.slice(2, 5);
+console.log(citrus); // ['orange', 'grapefruit', 'lime']
+console.log(fruits); // ['apple', 'banana', 'orange', 'grapefruit', 'lime', 'lemon']
+```
+
+- `Array.splice()` changes the contents of an array by removing or replacing existing elements and/or adding new elements. 
+- It takes three or more parameters: `start`, `deleteCount`, and any additional `elements` to add to the array. 
+- The `start` parameter is the index at which to start changing the array. 
+- The `deleteCount` parameter specifies how many elements to remove starting at the start index.
+
+```js
+const fruits = ['apple', 'banana', 'orange', 'grapefruit', 'lime', 'lemon'];
+fruits.splice(2, 2, 'kiwi');
+console.log(fruits); // ['apple', 'banana', 'kiwi', 'lime', 'lemon']
+```
+- In summary, `Array.slice()` returns a copy of a portion of an array, while `Array.splice()` changes the contents of an array by adding, removing, and/or replacing elements.
+
+
+## 46. What are selectors in CSS ?
+
+**Element selectors**: They target elements based on their tag names. For example, the selector `p` will target all `p` tags on a web page
+
+**Class selectors:** They target elements that have a specific class attribute value. For example, the selector `.my-class` will target all elements that have `class="my-class"`.
+
+**ID selectors:** They target elements that have a specific `id` attribute value. For example, the selector `#my-id` will target the element that has `id="my-id"`.
+
+**Pseudo-class selectors:** They target elements based on a specific state or behavior. For example, the selector `a:hover` will target all the `a` tags when they are being hovered over by the user.
+
+**Combinators:** They combine selectors to target specific elements. For example, the selector `p + p` will target all `p` tags that come immediately after another `p` tag.
+
+
+## 47. Sass vs CSS
+
+`Sass` and `CSS` are both styling languages used to style web pages. However, `Sass` is a preprocessor that extends the functionality of `CSS` and makes it more efficient and easier to use. Here are some of the differences between Sass and CSS:
+
+1. **Syntax:** Sass has its own syntax, which is a superset of CSS. This means that all valid CSS is also valid Sass, but Sass has additional features and syntax that are not available in CSS.
+
+2. **Variables:** Sass allows you to define variables, which can be used to store and reuse values throughout your code.
+
+3. **Nesting:** Sass allows you to nest selectors inside one another, making it easier to write and read complex CSS rules.
+
+4. **Mixins:** Sass allows you to define mixins, which are reusable pieces of code that can be included in multiple selectors.
+
+5. **Functions:** Sass allows you to define functions, which can be used to perform calculations or manipulate values. 
 
 
