@@ -383,6 +383,8 @@ console.log(personName);
 
 - Here array with value `Hello` is passed as an argument to parameter `greeting`
 
+- We cannot use arrow functions in `call()` method.
+
 
 ## 8. Implement Promise.all() method
 
