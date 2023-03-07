@@ -386,9 +386,15 @@ console.log(personName);
 
 ## 8. Implement Promise.all() method
 
+https://stackblitz.com/edit/js-kmed1c?file=index.js
+
 - The *Promise.all()* method is one of the promise concurrency methods. It can be useful for aggregating the results of multiple promises. It is typically used when there are multiple related asynchronous tasks to resolve.
 
-- *Promise.all()* will reject immediately upon any of the input promises rejecting.
+- *Promise.all()* will reject immediately upon any of the input promises rejecting.'
+
+- *Promise.all* returns an array of resolved values.
+
+- Pass `promise` objects into `all()` method.
 
 ```js
 function showText(text, time) {
@@ -408,9 +414,51 @@ Promise.all([
 })
 ```
 
+### Example - 2
+
+```js
+const promise1 = testFn1();
+const promise2 = testFn2();
+
+function testFn1() {
+  return new Promise((resolve, reject) => {
+    if (true) {
+      resolve('Promise1 Resolved');
+    }
+    reject(new Error('Promise1 Rejected'));
+  });
+}
+
+function testFn2() {
+  return new Promise((resolve, reject) => {
+    if (true) {
+      resolve('Promise2 resloved');
+    }
+    reject(new Error('Promise2 Rejected'));
+  });
+}
+
+Promise.all([promise1, promise2])
+  .then((value) => {
+    console.log(value);
+  })
+  .catch((error) => {
+    console.log(error.message);
+  });
+```
+
+Ouput:
+
+```bash
+["Promise1 Resolved", "Promise2 resloved"]
+```
+
 ## 9. Explain lifecycle methods using class components
 
 ### 1. componentDidMount method
+
+https://github.com/jisshub/Namaste-React-Course#1-componentdidmount
+
 
 - **componentDidMount** runs when our component is rendered for the first time.
 
