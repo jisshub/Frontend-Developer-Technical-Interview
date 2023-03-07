@@ -467,17 +467,33 @@ https://github.com/jisshub/Namaste-React-Course#1-componentdidmount
 - Use cases are when we want to fetch from our API's, or provide some initial values to our state variable on first component render.
 
 ```jsx
-class App extends React.Component {
+import React from 'react';
+
+class Parent extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log('call constructor');
+  }
   componentDidMount() {
-    console.log("componentDidMount runs");
+    console.log('Call component did mount');
   }
   render() {
-    return <button>Hello</button>;
+    console.log('render function');
+    return (
+      <div>
+        <h1>Test</h1>
+      </div>
+    );
   }
 }
 
-export default App;
+export default Parent;
 ```
+
+![](./images/image5.png)
+
+- We can observe that `componentDidMount` is called after `construtor` and `render` method is called.
+
 
 ### 2. componentDidUpdate method
 
