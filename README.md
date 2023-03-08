@@ -72,20 +72,6 @@
 
 [36. JavaScript Closures](#36-javascript-closures)
 
-- Javascript closure gives you access to an outer function's scope from an inner function. 
-- In JavaScript, closures are created every time a function is created.
-
-```js
-function outer(){
-  const name = 'jissmon'
-  function inner(){
-    console.log(name)
-  }
-  innner()
-}
-outer()
-```
-
 [37. Virtual DOM](#37-virtual-dom)
 
 [38. Functional vs Class Components](#38-functional-vs-class-components)
@@ -1565,6 +1551,19 @@ In summary, `position: absolute` is used to take an element out of the normal do
 
 ## 36. JavaScript Closures
 
+- Javascript closure gives you access to an outer function's scope from an inner function. 
+- In JavaScript, closures are created every time a function is created.
+
+```js
+function outer(){
+  const name = 'jissmon'
+  function inner(){
+    console.log(name)
+  }
+  innner()
+}
+outer()
+```
 
 ## 37. Virtual DOM
 
