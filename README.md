@@ -94,6 +94,8 @@
 
 [47. Sass vs CSS](#47-sass-vs-css)
 
+[48. Currying in JavaScript](#48-currying-in-javascript)
+
 
 ## 1. Map and forEach difference
 
@@ -578,7 +580,10 @@ These 3 are the life cycle methods of React.
 
 - To use life cycle method in react functional component, we use a hook called **useEffect**.
 
-- *useEffect* takes a callback function and a dependancy array
+- *useEffect* takes a callback function and a dependancy array.
+
+https://github.com/jisshub/Namaste-React-Course#useeffect-hook
+
 
 ### Case 1: Empty Dependancy Array / componentDidMount
 
@@ -1652,4 +1657,24 @@ console.log(fruits); // ['apple', 'banana', 'kiwi', 'lime', 'lemon']
 
 5. **Functions:** Sass allows you to define functions, which can be used to perform calculations or manipulate values. 
 
+## 48. Currying in JavaScript
+
+- In other words, `currying` is the process of breaking down a function that takes multiple arguments into a series of functions that each take one argument.
+
+- The curried function returns a new function that expects the next argument until all the arguments are collected and the final result is returned.
+
+```js
+function add(a) {
+  return function(b) {
+    return a + b;
+  }
+}
+
+const addFive = add(5);
+console.log(addFive(3)); // Output: 8
+```
+
+- In this example, `add` is a curried function that takes a single argument `a` and returns a new function that takes another argument `b`. The returned function adds a and b together and returns the result.
+
+- When we call `add(5)`, it returns a new function that adds 5 to any argument passed to it. We assign this new function to `addFive` and call it with 3. The result is 8.
 
