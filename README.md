@@ -1553,6 +1553,8 @@ https://github.com/jisshub/Namaste-Javascript#event-loop-in-javascript
 
 https://www.programiz.com/javascript/hoisting
 
+https://stackblitz.com/edit/js-2ramnx?file=index.js%3AL5
+
 Hoisting in JavaScript is a behavior in which a function or a variable can be used before declaration. For example,
 
 ```js
