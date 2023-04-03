@@ -1551,6 +1551,7 @@ https://github.com/jisshub/Namaste-Javascript#event-loop-in-javascript
 
 ## 34. Memory Hoisting
 
+https://www.programiz.com/javascript/hoisting
 
 ## 35. What are Promises ?
 
