@@ -1607,6 +1607,7 @@ let greet = function() {
 
 ## 35. What are Promises ?
 
+https://github.com/jisshub/Namaste-Javascript#promises
 
 ## 36. JavaScript Closures
 
