@@ -1627,6 +1627,8 @@ outer()
 
 ## 37. Virtual DOM
 
+https://github.com/jisshub/Namaste-React-Course#virtual-dom
+
 
 ## 38. Functional vs Class Components
 
