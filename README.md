@@ -1547,6 +1547,7 @@ In summary, `position: absolute` is used to take an element out of the normal do
 
 ## 33. Event Loop in JavaScript
 
+https://github.com/jisshub/Namaste-Javascript#event-loop-in-javascript
 
 ## 34. Memory Hoisting
 
