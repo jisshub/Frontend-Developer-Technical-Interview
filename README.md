@@ -98,6 +98,8 @@
 
 [49. Third party libraries in React](#49-third-party-libraries-in-react)
 
+[50. useState Hook](#50-usestate-hook)
+
 
 ## 1. Map and forEach difference
 
@@ -1853,3 +1855,32 @@ console.log(addFive(3)); // Output: 8
 **Formik:** A library for building forms in a React application.
 
 **React Bootstrap:** A library that provides Bootstrap UI components for React applications.
+
+
+## 50. useState Hook
+
+https://github.com/jisshub/Namaste-React-Course#usestate-hook
+
+## Passing key as a prop in react
+
+In React, you can pass a key as a prop to a component. The key prop is a special attribute that is used by React to track changes in a list of components and to efficiently update the DOM when necessary.
+
+When you render a list of components in React, each component must have a unique key prop. This allows React to efficiently identify which components have changed, added, or removed from the list.
+
+To pass a key as a prop in React, you simply include the key prop in the component's props object, like so:
+
+```jsx
+<MyComponent key={myKey} />
+```
+
+Here, myKey is a unique identifier for the component. You can use any value for the key, as long as it is unique among the siblings of the component.
+
+If you are rendering a list of components, you can use the key prop to provide a stable identity for each component, like so:
+
+```jsx
+{myList.map(item => (
+  <MyComponent key={item.id} />
+))}
+```
+
+In this example, item.id is used as the key prop for each component in the list. This ensures that each component has a unique key and allows React to efficiently update the DOM when the list changes.
