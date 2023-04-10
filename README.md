@@ -100,6 +100,7 @@
 
 [50. useState Hook](#50-usestate-hook)
 
+[51. Passing key as a prop in react](#51-passing-key-as-a-prop-in-react)
 
 ## 1. Map and forEach difference
 
@@ -1861,7 +1862,7 @@ console.log(addFive(3)); // Output: 8
 
 https://github.com/jisshub/Namaste-React-Course#usestate-hook
 
-## Passing key as a prop in react
+## 51. Passing key as a prop in react
 
 In React, you can pass a key as a prop to a component. The key prop is a special attribute that is used by React to track changes in a list of components and to efficiently update the DOM when necessary.
 
