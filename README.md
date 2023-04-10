@@ -1158,6 +1158,8 @@ export default function App() {
 
 ## 23. Redux
 
+https://github.com/jisshub/Namaste-React-Course#redux-toolkit
+
 Redux is a popular state management library for JavaScript applications, often used with React. It provides a centralized store for all the data needed by your application and a way to manage the changes to that data.
 
 In a **React + Redux** setup, all your application's state is stored in a single, global `store` object managed by Redux. React components subscribe to the `store` to receive updates when the state changes. When a user interacts with your app, `actions` are dispatched which describe the changes to the `state`. Redux then updates the state in the store, and React re-renders the components that depend on the state.
@@ -1891,4 +1893,9 @@ In this example, item.id is used as the key prop for each component in the list.
 ## 52. JSX Template
 
 https://github.com/jisshub/Namaste-React-Course#jsx
+
+
+## 53. Props
+
+https://github.com/jisshub/Namaste-React-Course#props
 
