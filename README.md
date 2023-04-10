@@ -1632,6 +1632,19 @@ outer()
 https://github.com/jisshub/Namaste-React-Course#virtual-dom
 
 
+### Which js libraries & frameworks uses virtual dom ?
+
+**React.js:** React.js is one of the most popular JavaScript libraries for building user interfaces. React uses a virtual DOM to keep track of changes and to update the actual DOM only when necessary, which results in faster and more efficient rendering.
+
+**Vue.js:** Vue.js is another popular JavaScript framework that uses a virtual DOM to render its templates. Like React, Vue.js uses a virtual DOM to update the actual DOM only when necessary, which helps to improve performance.
+
+**Angular.js:** Angular.js is a popular JavaScript framework for building complex web applications. While it doesn't use a virtual DOM like React and Vue.js, it has its own change detection mechanism that helps to optimize rendering performance.
+
+**Inferno:** Inferno is a lightweight, high-performance JavaScript library that is designed to be compatible with React's API. It uses a virtual DOM to optimize rendering performance and reduce the size of the bundle.
+
+**Preact:** Preact is another lightweight alternative to React that uses a virtual DOM to optimize rendering performance. It is designed to have a similar API to React, making it easy to use for developers familiar with React.
+
+
 ## 38. Functional vs Class Components
 
 https://github.com/jisshub/Namaste-React-Course#class-based-components
