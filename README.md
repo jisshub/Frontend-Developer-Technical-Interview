@@ -96,6 +96,8 @@
 
 [48. Currying in JavaScript](#48-currying-in-javascript)
 
+[49. Third party libraries in React](#49-third-party-libraries-in-react)
+
 
 ## 1. Map and forEach difference
 
@@ -1572,8 +1574,12 @@ outer()
 
 ## 37. Virtual DOM
 
+https://github.com/jisshub/Namaste-React-Course#virtual-dom
+
 
 ## 38. Functional vs Class Components
+
+https://github.com/jisshub/Namaste-React-Course#class-based-components
 
 
 ## 39. Data Flow between Parent and Child Component
@@ -1581,11 +1587,86 @@ outer()
 
 ## 40. Pass Data from Child to Parent
 
+In React, data can be passed from child components to parent components using a technique called "lifting state up" or through callback functions.
+
+Here's an example of passing data from a child component to a parent component using lifting state up:
+
+```js
+// Parent component
+import React, { useState } from 'react';
+import ChildComponent from './ChildComponent';
+
+function ParentComponent() {
+  const [dataFromChild, setDataFromChild] = useState(null);
+
+  const handleDataFromChild = (data) => {
+    setDataFromChild(data);
+  };
+
+  return (
+    <div>
+      <h1>Data from Child: {dataFromChild}</h1>
+      <ChildComponent onData={handleDataFromChild} />
+    </div>
+  );
+}
+
+// Child component
+import React, { useState } from 'react';
+
+function ChildComponent(props) {
+  const [data, setData] = useState('Hello World');
+
+  const handleButtonClick = () => {
+    props.onData(data);
+  };
+
+  return (
+    <div>
+      <button onClick={handleButtonClick}>Send Data to Parent</button>
+    </div>
+  );
+}
+```
+
+- In this example, the `ParentComponent` has a state called dataFromChild that is initially set to null. It also has a callback function called handleDataFromChild that updates the dataFromChild state with the data received from the child component.
+
+- The `ChildComponent` receives the onData callback function as a prop from the ParentComponent. When the button is clicked, it calls the onData function with the data state as an argument, which triggers the handleDataFromChild function in the ParentComponent.
+
+- As a result, the `dataFromChild` state in the ParentComponent is updated with the data passed from the `ChildComponent`.
+
+- Note that the onData callback function can be named anything and can have any number of arguments, depending on the requirements of the application.
+
 
 ## 41. useMemo vs React.Memo
 
+React's `useMemo` hook is used to optimize the performance of your components by `memorizing` the values of expensive `calculations`. It takes two arguments: a function that returns the value to be memorized and a list of dependencies. The hook will only re-compute the value if one of the dependencies has changed.
+
+Here's an example usage of useMemo:
+
+```js
+import React, { useMemo } from 'react';
+
+function MyComponent({ data }) {
+  const memoizedValue = useMemo(() => {
+    // Perform an expensive calculation
+    let sum = 0;
+    for (let i = 0; i < data.length; i++) {
+      sum += data[i];
+    }
+    return sum;
+  }, [data]);
+
+  return <div>{memoizedValue}</div>;
+}
+```
+
+In this example, the `memoizedValue` is only recomputed if the data prop changes. This can greatly improve the performance of the component, especially if the calculation is expensive.
+
 
 ## 42. Unmounting in Function Component
+
+https://github.com/jisshub/Namaste-React-Course#unmounting-component-in-useeffect-hook
 
 
 ## 43. Controlled and Uncontrolled Components
@@ -1691,3 +1772,16 @@ console.log(addFive(3)); // Output: 8
 
 - When we call `add(5)`, it returns a new function that adds 5 to any argument passed to it. We assign this new function to `addFive` and call it with 3. The result is 8.
 
+## 49. Third party libraries in React
+
+**Redux:** A state management library that helps to manage application state in a predictable way.
+
+**React Router:** A library for handling routing in a React application.
+
+**Axios:** A library for making HTTP requests from a React application.
+
+**Material UI:** A popular UI component library that provides pre-built UI components for React applications.
+
+**Formik:** A library for building forms in a React application.
+
+**React Bootstrap:** A library that provides Bootstrap UI components for React applications.
