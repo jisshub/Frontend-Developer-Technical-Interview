@@ -102,6 +102,8 @@
 
 [51. Passing key as a prop in react](#51-passing-key-as-a-prop-in-react)
 
+[52. JSX Template](#52-jsx-template)
+
 ## 1. Map and forEach difference
 
 Both are array functions to loop through the same.
@@ -1885,3 +1887,8 @@ If you are rendering a list of components, you can use the key prop to provide a
 ```
 
 In this example, item.id is used as the key prop for each component in the list. This ensures that each component has a unique key and allows React to efficiently update the DOM when the list changes.
+
+## 52. JSX Template
+
+https://github.com/jisshub/Namaste-React-Course#jsx
+
