@@ -1549,12 +1549,67 @@ In summary, `position: absolute` is used to take an element out of the normal do
 
 ## 33. Event Loop in JavaScript
 
+https://github.com/jisshub/Namaste-Javascript#event-loop-in-javascript
 
 ## 34. Memory Hoisting
 
+https://www.programiz.com/javascript/hoisting
+
+https://stackblitz.com/edit/js-2ramnx?file=index.js%3AL5
+
+Hoisting in JavaScript is a behavior in which a function or a variable can be used before declaration. For example,
+
+```js
+// using test before declaring
+console.log(test);   // undefined
+var test;
+```
+
+### Variable Hoisting
+In terms of variables and constants, keyword var is hoisted and let and const does not allow hoisting.
+
+```js
+a = 5;
+console.log(a);
+var a;
+```
+
+If a variable is used with the let keyword, that variable is not hoisted. For example,
+
+```js
+a = 5;
+console.log(a);
+let a; // error
+```
+
+While using let, the variable must be declared first.
+
+
+### Function Hoisting
+
+A function can be called before declaring it. For example,
+
+```js
+greet();
+
+function greet() {
+    console.log('Hi, there.');
+}
+```
+
+However, when a function is used as an expression, an error occurs because only declarations are hoisted. For example;
+
+```js
+greet();
+
+let greet = function() {
+    console.log('Hi, there.');
+}
+```
 
 ## 35. What are Promises ?
 
+https://github.com/jisshub/Namaste-Javascript#promises
 
 ## 36. JavaScript Closures
 
