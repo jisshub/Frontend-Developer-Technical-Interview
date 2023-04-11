@@ -104,6 +104,9 @@
 
 [52. JSX Template](#52-jsx-template)
 
+
+[55. React vs Angular](#55-react-vs-angular)
+
 ## 1. Map and forEach difference
 
 Both are array functions to loop through the same.
@@ -1913,3 +1916,15 @@ Error boundaries only catch errors during rendering, in lifecycle methods, or in
 - Server-side rendering.
 
 Error boundaries are a feature in React 16 and above.
+
+## 55. React vs Angular
+
+Architecture: Angular is a complete framework, which means it includes everything you need to build an application, including a routing system, a data management system, and a templating engine. React, on the other hand, is a library that focuses on the UI layer of an application, allowing developers to use it with other libraries or frameworks.
+
+Language: Angular is written in TypeScript, a typed superset of JavaScript that adds features like classes, interfaces, and static typing. React, on the other hand, is written in JavaScript, and it can be used with or without a type system like TypeScript.
+
+Learning curve: Angular has a steeper learning curve than React, due to its larger size and the fact that it is a complete framework. React is easier to learn for developers who are already familiar with JavaScript and other front-end technologies.
+
+Performance: React is known for its performance, thanks to its virtual DOM implementation, which helps minimize the number of updates needed to render a component. Angular also has a performant rendering engine, but it can be slower in some cases due to its more complex architecture.
+
+Community: Both React and Angular have large and active communities, with plenty of resources and third-party libraries available. React's community is generally considered larger and more diverse, with a wider range of use cases and applications.
