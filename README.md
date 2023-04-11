@@ -1899,3 +1899,17 @@ https://github.com/jisshub/Namaste-React-Course#jsx
 
 https://github.com/jisshub/Namaste-React-Course#props
 
+
+## 54. Error Boundaries
+
+In React, "error boundaries" are components that catch JavaScript errors anywhere in their child component tree, log those errors, and display a fallback UI instead of the component tree that crashed.
+
+Error boundaries are useful in helping you improve the stability and reliability of your React application. They provide a way to handle runtime errors in your application and provide a better user experience by showing a fallback UI instead of a broken page.
+
+Error boundaries only catch errors during rendering, in lifecycle methods, or in constructors of the whole tree below them. Error boundaries do not catch errors for:
+
+- Event handlers.
+- Asynchronous code (e.g. setTimeout or requestAnimationFrame callbacks)
+- Server-side rendering.
+
+Error boundaries are a feature in React 16 and above.
