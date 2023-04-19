@@ -108,7 +108,7 @@
 [55. React vs Angular](#55-react-vs-angular)
 
 
-[56. Why are for loop faster than filter method ?](#56-why-are-for-loop-faster-than-filter-method)
+[56. Why are for loop faster than filter method ?](#56-why-are-for-loop-faster-than-filter-method-?)
 
 ## 1. Map and forEach difference
 
