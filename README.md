@@ -104,8 +104,9 @@
 
 [52. JSX Template](#52-jsx-template)
 
-
 [55. React vs Angular](#55-react-vs-angular)
+
+[56. Why are for loop faster than filter method ?](#56-Why are for loop faster than filter method ?)
 
 ## 1. Map and forEach difference
 
@@ -1928,3 +1929,9 @@ Learning curve: Angular has a steeper learning curve than React, due to its larg
 Performance: React is known for its performance, thanks to its virtual DOM implementation, which helps minimize the number of updates needed to render a component. Angular also has a performant rendering engine, but it can be slower in some cases due to its more complex architecture.
 
 Community: Both React and Angular have large and active communities, with plenty of resources and third-party libraries available. React's community is generally considered larger and more diverse, with a wider range of use cases and applications.
+
+## Why are for loop faster than filter method ?
+
+- Using `for loop` is more faster and efficient than using array methods like `map`, `filter`.
+
+- **Reason:** `for-loops` run synchronously, and the `filter` method is creating 1 new function for each element in the array. To be precise, the `Filter` method is 77% slower than `for loop`.
